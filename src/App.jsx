@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <header>
-        <nav></nav>
-      </header>
+    <BrowserRouter>
+      <Header />
       <main>
-          <section></section>
-          <section></section>
+        <Routes>
+          <Route path="/" element={<section>Home (Frases)</section>} />
+          <Route path="/new" element={<section>Nueva Frase</section>} />
+        </Routes>
       </main>
-      <footer></footer>
-    </>
-  )
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
