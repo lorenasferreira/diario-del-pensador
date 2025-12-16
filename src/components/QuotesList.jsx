@@ -68,7 +68,7 @@ const QuotesList = () => {
                 </div>
               </div>
             )
-          },
+          
 
         </>
 
