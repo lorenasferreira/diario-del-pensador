@@ -1,0 +1,16 @@
+:root {
+  --color-bg-main: #FAF7F2; 
+  --color-text-primary: #4A4A4A;
+  --color-text-heading: #7A5C4D;
+  --color-text-muted: #7A5C4D;
+  --color-accent-primary: #C97F65;
+  --color-accent-secondary: #D5B98E;
+  --color-border-light: #D5B98E;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+}
