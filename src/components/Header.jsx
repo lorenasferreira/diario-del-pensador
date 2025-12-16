@@ -10,14 +10,18 @@ export default function Header() {
           <Logo size={56} />
         </Link>
 
-        <div className="header-text">
-          <p className="header-greeting">Buenos días, Mandy</p>
-          <h1 className="header-title">Frases guardadas</h1>
+        <div className="subtitle">
+          <Link to="/" className="title-link">
+            <h1 className="header-title">DIARIO DEL PENSADOR</h1>
+          </Link>
+          <p>Frases para pensar, sentir y guardar.</p>
         </div>
       </div>
-
-      <div className="header-avatar">
-        <img src="/mandy.png" alt="Foto de Mandy" />
+      <div className="header-text">
+        <p className="header-greeting">Hola, Mandy!</p>
+        <div className="header-avatar">
+          <img src="/mandy.png" alt="Foto de Mandy" />
+        </div>
       </div>
     </header>
   );
