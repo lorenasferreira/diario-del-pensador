@@ -10,8 +10,8 @@ function App() {
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<section>Home (Frases)</section>} />
-          <Route path="/new" element={<section>Nueva Frase</section>} />
+          <Route path="/" element={<section></section>} />
+          <Route path="/new" element={<section></section>} />
         </Routes>
       </main>
       <Footer />
@@ -21,3 +21,5 @@ function App() {
 }
 
 export default App;
+
+git commit -m "feat: finalize layout with header, content and footer"

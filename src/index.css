@@ -1,16 +1,28 @@
 :root {
-  --color-bg-main: #FAF7F2; 
-  --color-text-primary: #4A4A4A;
-  --color-text-heading: #7A5C4D;
-  --color-text-muted: #7A5C4D;
-  --color-accent-primary: #C97F65;
-  --color-accent-secondary: #D5B98E;
-  --color-border-light: #D5B98E;
+  --color-bg-main: #faf7f2;
+  --color-text-primary: #4a4a4a;
+  --color-text-heading: #7a5c4d;
+  --color-text-muted: #7a5c4d;
+  --color-accent-primary: #c97f65;
+  --color-accent-secondary: #d5b98e;
+  --color-border-light: #d5b98e;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-body);
   background-color: var(--color-bg-main);
   color: var(--color-text-primary);
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
 }
