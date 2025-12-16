@@ -21,5 +21,3 @@ function App() {
 }
 
 export default App;
-
-git commit -m "feat: finalize layout with header, content and footer"
