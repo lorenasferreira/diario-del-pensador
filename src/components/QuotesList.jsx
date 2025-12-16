@@ -20,7 +20,7 @@ export default QuotesList;
 
 import { useState } from "react"
 
-const PhrasesList = () => {
+const QuotesList = () => {
     const [phrase, setPhrase] = useState([
         {
             text: "Quien sea feliz también hará feliz a otros",
@@ -45,12 +45,31 @@ const PhrasesList = () => {
     ])
     return (
         <>
-            <h2>Frases guardadas</h2>
-            <h4>Una colección de pensamientos que quieres tener cerca</h4>
-            <button>Mas</button>
-            <div></div>
-            <div></div>
-            <div></div>
+          {
+            phrase.map(phrase, index) => (
+              <div key="index">
+                <h2>Frases guardadas</h2>
+                <h4>Una colección de pensamientos que quieres tener cerca</h4>
+                <button>Mas</button>
+                <div>
+                  <p>{phrase.text} {phrase.autor} </p>
+                  <button></button>
+                  <button></button>
+                </div>
+                <div>
+                  <p>{phrase.text} {phrase.autor} </p>
+                  <button></button>
+                  <button></button>
+                </div>
+                <div>
+                  <p>{phrase.text} {phrase.autor} </p>
+                  <button></button>
+                  <button></button> 
+                </div>
+              </div>
+            )
+          },
+
         </>
 
 
