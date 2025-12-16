@@ -1,0 +1,15 @@
+.btn-edit {
+    border: none;
+    border-radius: 50%;
+    fill :#AC7F5E;
+    cursor: pointer;
+    padding: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn-edit:hover{
+    background-color: #7A5C4D; 
+    transition: background-color 0.3s;
+    fill:#FAF7F2;
+}
+

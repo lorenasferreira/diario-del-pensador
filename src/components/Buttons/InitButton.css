@@ -1,0 +1,14 @@
+.btn-init {
+    border: none;
+    border-radius: 50%;
+    fill:#7A5C4D;
+    cursor: pointer;
+    padding: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-init:hover{
+    background-color: #7A5C4D; 
+    transition: background-color 0.3s;
+    fill:#FAF7F2;
+}
