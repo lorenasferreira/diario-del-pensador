@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import NewQuote from './pages/NewQuote';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,7 @@ function App() {
       <main>
         
         <section>
-
+        <NewQuote/>
         </section>
           <section></section>
       </main>
