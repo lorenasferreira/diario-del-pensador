@@ -6,14 +6,16 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div className="app-layout">
       <Header />
-      <main>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<section>Home (Frases)</section>} />
           <Route path="/new" element={<section>Nueva Frase</section>} />
         </Routes>
       </main>
       <Footer />
+      </div>
     </BrowserRouter>
   );
 }
