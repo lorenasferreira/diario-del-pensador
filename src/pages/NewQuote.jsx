@@ -8,7 +8,6 @@ const NewQuote = () => {
         <>  
             <section className="container-form">
                 <form className="form-new" action="">
-                
                     <div className="container-title">
                         <div>
                             <h2>Añadir frase nueva</h2>
