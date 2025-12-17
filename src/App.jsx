@@ -13,11 +13,10 @@ function App() {
         <main className="main-content">
           <Routes>
             {}
-            <Route path="/" element={<QuotesList />} />
-
-            {}
-            <Route path="/new" element={<section></section>} />
+           <Route path="/" element={<><QuotesList /><NewQuote /></>} />
+           
           </Routes>
+         
         </main>
 
         <Footer />
