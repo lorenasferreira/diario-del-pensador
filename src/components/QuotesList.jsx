@@ -1,24 +1,4 @@
-/*
-import QuoteCard from "../components/QuoteCard";
-
-function QuotesList(props) {
-  return (
-    <div>
-      {props.quotes.map((quote) => (
-        <QuoteCard
-          key={quote.id}
-          text={quote.text}
-          author={quote.author}
-        />
-      ))}
-    </div>
-  );
-}
-
-export default QuotesList;
-*/
-
-import { useState } from "react"
+import { useState } from "react";
 
 const QuotesList = () => {
     const [phrase, setPhrase] = useState([
@@ -86,4 +66,4 @@ const QuotesList = () => {
 
 
     )
-}*/</>
+}
