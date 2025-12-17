@@ -13,7 +13,7 @@ function App() {
       <main>
         
         <section>
-        <NewQuote/>
+  
         </section>
           <section></section>
       </main>
