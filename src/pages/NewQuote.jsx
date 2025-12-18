@@ -5,37 +5,39 @@ import { useActionState, useEffect, useState } from "react";
 import QuotesList from "../components/QuotesList";
 
 const NewQuote = () => {
-  const [form, setForm] = useState({ text: "", author: "" });
+  const [form, setForm] = useState({ text: "", author: "", etiq:"" });
   const [phrases, setPhrases] = useState([]);
-  const [errors, setErrors] = useState({ author: "", text: "" });
+  const [errors, setErrors] = useState({ author: "", text: "", etiq:"" });
+  const [started, setStarted] = useState({ author: false, text: false, etiq: false });
 
   const NewPhrase = (event) => {
+    const { name, value} = event.target;
     setForm({
       ...form,
       [event.target.name]: event.target.value,
     });
+    setStarted({...started, [name]:true});
   };
   console.log(form);
 
   const SavePhrase = (event) => {
     if (event) event.preventDefault();
-    if (errors.text || errors.author || form.text === "" || form.author === ""){
+    if (errors.text || errors.author || errors.etiq ||form.text === "" || form.author === "" ){
     return alert ("Por favor, corrige los errores antes de guardar.");
     }
+
     setPhrases([...phrases, form]);
     setForm({ text: "", author: "", etiq: "" });
+    setStarted({author:false,text: false})
     alert("¡Frase añadida a la lista!");
   }
   useEffect(() => {
     const CheckAuthor = /^[a-zA-ZÀ-ÿ\s]*$/;
     const CheckPrhase = /^[a-zA-ZÀ-ÿ0-9\s!?]{0,80}$/;
-    let newErrors = { author: "", text: "" };
+    const CheckEtiq = /^[a-zA-ZÀ-ÿ\s]*$/;
 
-    if (form.author.trim() === "") {
-      newErrors.author = " *El autor es obligatorio.";
-    } if (!CheckAuthor.test(form.author)) {
-      newErrors.author = " *Solo se permiten letras.";
-    }
+    let newErrors = { author: "", text: "", etiq:"" };
+
     if (form.text.trim() === "") {
       newErrors.text = " *La frase es obligatoria.";
     } if (form.text.length < 10) {
@@ -43,8 +45,16 @@ const NewQuote = () => {
     } if (!CheckPrhase.test(form.text)){
       newErrors.text = "*Formato no válido"
     }
+    if (form.author.trim() === "") {
+      newErrors.author = " *El autor es obligatorio.";
+    } if (!CheckAuthor.test(form.author)) {
+      newErrors.author = " *Solo se permiten letras.";
+    }
+    if (!CheckEtiq.test(form.etiq)) {
+      newErrors.etiq = " *Solo se permiten letras.";
+    }
     setErrors(newErrors);
-  }, [form.text, form.author]);
+  }, [form.text, form.author, form.etiq]);
 
   return (
     <>
@@ -70,10 +80,7 @@ const NewQuote = () => {
               onChange={NewPhrase}
               value={form.text}
             ></textarea>
-            {errors.text && <p className="error-msg">{errors.text}</p>}
-            <p className="note-input">
-              Mínimo una frase completa, puedes editarla más tarde.
-            </p>
+            {started.text && errors.text && <p className="error-msg">{errors.text}</p>}
           </div>
           <div>
             <label htmlFor="">Autor / Autora</label>
@@ -83,8 +90,7 @@ const NewQuote = () => {
               onChange={NewPhrase}
               value={form.author}
             />
-            {errors.author && <p className="error-msg" >{errors.author}</p>}
-            <p className="message">mensaje 1</p>
+            {started.author && errors.author && <p className="error-msg">{errors.author}</p>}
           </div>
           <div>
             <label htmlFor="">Etiqueta(Opcional)</label>
@@ -94,7 +100,7 @@ const NewQuote = () => {
               onChange={NewPhrase}
               value={form.etiq || ""}
             />
-            <p className="message">mensaje2</p>
+            {started.etiq && errors.etiq && <p className="error-msg">{errors.etiq}</p>}
           </div>
           <SaveButton onSave={SavePhrase} />
         </form>
