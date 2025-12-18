@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import QuotesList from "./components/QuotesList";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import QuotesList from "./components/ListPhrases/QuotesList";
 import NewQuote from "./pages/NewQuote";
 
 function App() {
