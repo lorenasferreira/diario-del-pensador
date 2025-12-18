@@ -1,4 +1,6 @@
 import { useState } from "react";
+import EditButton from "./Buttons/EditButton";
+import DeleteButton from "./Buttons/DeleteButton";
 
 const QuotesList = () => {
   const [phrases, setPhrases] = useState([
@@ -17,35 +19,40 @@ const QuotesList = () => {
       text: "Dormir es distraerse del mundo",
       author: "Jorge Luis Borges",
     },
-    {
-      id: 4,
-      text: "Un día sin reír es un día perdido",
-      author: "Charles Chaplin",
-    },
-    {
-      id: 5,
-      text: "Sé el cambio que quieres ver en el mundo",
-      author: "Mahatma Gandhi",
-    },
   ]);
+
+  const handleDelete = (id) => {
+    const confirmDelete = window.confirm(
+      "¿Estás segura de que quieres eliminar esta frase?"
+    );
+
+    if (!confirmDelete) {
+      return;
+    }
+
+    const filteredPhrases = phrases.filter((phrase) => phrase.id !== id);
+
+    setPhrases(filteredPhrases);
+  };
+
+  const handleEdit = (id) => {
+    const phraseToEdit = phrases.find((phrase) => phrase.id === id);
+    console.log("Editar frase:", phraseToEdit);
+  };
 
   return (
     <section>
-      {/* TÍTULO GENERAL (NO SE REPITE) */}
       <h2>Frases guardadas</h2>
       <h4>Una colección de pensamientos que quieres tener cerca</h4>
 
-      <button>Más</button>
-
-      {/* LISTA DE FRASES */}
       {phrases.map((phrase) => (
         <div key={phrase.id}>
           <p>
             “{phrase.text}” — {phrase.author}
           </p>
 
-          <button>Editar</button>
-          <button>Eliminar</button>
+          <EditButton onClick={() => handleEdit(phrase.id)} />
+          <DeleteButton onClick={() => handleDelete(phrase.id)} />
         </div>
       ))}
     </section>

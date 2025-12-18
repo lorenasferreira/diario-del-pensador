@@ -1,6 +1,6 @@
 import "./DeleteButton.css";
 
-const DeleteButton = () => {
+const DeleteButton = ({ onClick })  => {
     
     return (
         <>
