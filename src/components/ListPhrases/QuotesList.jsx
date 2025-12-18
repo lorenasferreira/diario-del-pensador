@@ -1,7 +1,7 @@
 import { useState } from "react";
-import AddButton from "./Buttons/AddButton";
-import EditButton from "./Buttons/EditButton";
-import DeleteButton from "./Buttons/DeleteButton";
+import AddButton from "../Buttons/BtnAdd/AddButton";
+import EditButton from "../Buttons/BtnEdit/EditButton";
+import DeleteButton from "../Buttons/BtnDelete/DeleteButton";
 import "./QuotesList.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -44,32 +44,34 @@ const QuotesList = () => {
   };
 
   return (
-    <section className="container-list">
-      <div className="title-header">
-        <div className="container-title-list">
-          <h2>Frases guardadas</h2>
-          <h4>Una colección de pensamientos que quieres tener cerca</h4>
-        </div>
+    <section>
+      <div className="container-list">
+        <div className="title-header">
+          <div className="container-title-list">
+            <h2>Frases guardadas</h2>
+            <h4>Una colección de pensamientos que quieres tener cerca</h4>
+          </div>
 
-        <div className="container-btn-add">
-          <Link to="/new">
-            <AddButton />
-          </Link>
-        </div>
-      </div>
-
-      {phrases.map((phrase) => (
-        <div className="container-phrase-save" key={phrase.id}>
-          <p className="phrase-save">
-            “{phrase.text}” — {phrase.author}
-          </p>
-
-          <div className="container-button">
-            <EditButton onClick={() => handleEdit(phrase.id)} />
-            <DeleteButton onClick={() => handleDelete(phrase.id)} />
+          <div className="container-btn-add">
+            <Link to="/new">
+              <AddButton />
+            </Link>
           </div>
         </div>
+
+        {phrases.map((phrase) => (
+          <div className="container-phrase-save" key={phrase.id}>
+            <p className="phrase-save">
+              “{phrase.text}” — {phrase.author}
+            </p>
+
+            <div className="container-button">
+              <EditButton onClick={() => handleEdit(phrase.id)} />
+              <DeleteButton onClick={() => handleDelete(phrase.id)} />
+            </div>
+        </div>
       ))}
+      </div>
     </section>
   );
 };
