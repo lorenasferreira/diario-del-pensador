@@ -3,6 +3,7 @@ import AddButton from "./Buttons/AddButton";
 import EditButton from "./Buttons/EditButton";
 import DeleteButton from "./Buttons/DeleteButton";
 import "./QuotesList.css";
+import { Link } from "react-router-dom";
 
 const QuotesList = () => {
   const [phrases, setPhrases] = useState([
@@ -23,7 +24,6 @@ const QuotesList = () => {
     },
   ]);
 
-  // 🗑️ ELIMINAR FRASE (SUA LÓGICA)
   const handleDelete = (id) => {
     const confirmDelete = window.confirm(
       "¿Estás segura de que quieres eliminar esta frase?"
@@ -31,18 +31,13 @@ const QuotesList = () => {
 
     if (!confirmDelete) return;
 
-    const filteredPhrases = phrases.filter(
-      (phrase) => phrase.id !== id
-    );
+    const filteredPhrases = phrases.filter((phrase) => phrase.id !== id);
 
     setPhrases(filteredPhrases);
   };
 
-  // ✏️ EDITAR FRASE (SUA LÓGICA)
   const handleEdit = (id) => {
-    const phraseToEdit = phrases.find(
-      (phrase) => phrase.id === id
-    );
+    const phraseToEdit = phrases.find((phrase) => phrase.id === id);
     console.log("Editar frase:", phraseToEdit);
   };
 
@@ -55,11 +50,12 @@ const QuotesList = () => {
         </div>
 
         <div className="container-btn-add">
-          <AddButton />
+          <Link to="/new">
+            <AddButton />
+          </Link>
         </div>
       </div>
 
-      {/* LISTA DE FRASES */}
       {phrases.map((phrase) => (
         <div className="container-phrase-save" key={phrase.id}>
           <p className="phrase-save">
