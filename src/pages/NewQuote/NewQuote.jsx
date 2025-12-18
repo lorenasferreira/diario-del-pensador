@@ -1,8 +1,8 @@
 import "./NewQuote.css";
-import InitButton from "../components/Buttons/InitButton";
-import SaveButton from "../components/Buttons/SaveButton";
+import InitButton from "../../components/Buttons/InitButton";
+import SaveButton from "../../components/Buttons/SaveButton";
 import { useActionState, useEffect, useState } from "react";
-import QuotesList from "../components/QuotesList";
+import QuotesList from "../../components/QuotesList";
 
 const NewQuote = () => {
   const [form, setForm] = useState({ text: "", author: "", etiq:"" });
@@ -59,7 +59,7 @@ const NewQuote = () => {
   return (
     <>
       <section className="container-form">
-        <form className="form-new" action="" onSubmit={SavePhrase}>
+        <form className="form-new" onSubmit={SavePhrase} >
           <div className="container-title">
             <div>
               <h2>Añadir frase nueva</h2>
@@ -102,7 +102,7 @@ const NewQuote = () => {
             />
             {started.etiq && errors.etiq && <p className="error-msg">{errors.etiq}</p>}
           </div>
-          <SaveButton onSave={SavePhrase} />
+          <SaveButton />
         </form>
         
       </section>

@@ -4,7 +4,7 @@ const SaveButton = ({onSave}) => {
     
     return (
         <>
-            <button className="btn-save" onClick={onSave}>Guardar frase </button>
+            <button type="submit" className="btn-save" >Guardar frase </button>
         </>
     );
 };
