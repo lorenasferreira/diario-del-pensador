@@ -24,6 +24,16 @@ const QuotesList = () => {
       text: "Dormir es distraerse del mundo",
       author: "Jorge Luis Borges",
     },
+    {
+      id: 4,
+      text: "Un día sin reír es un día perdido",
+      author: "Charles Chaplin",
+    },
+    {
+      id: 5,
+      text: "Sé el cambio que quieres ver en el mundo",
+      author: "Mahatma Gandhi",
+    },
   ]);
 
   const handleDelete = (id) => {
