@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import QuotesList from "./components/QuotesList";
-import NewQuote from "./pages/NewQuote";
+
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
 
             <Route path="/new" element={<section></section>} />
           </Routes>
+         
         </main>
 
         <Footer />
