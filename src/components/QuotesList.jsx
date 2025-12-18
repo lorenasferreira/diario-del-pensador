@@ -1,6 +1,15 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import EditButton from "./Buttons/EditButton";
 import DeleteButton from "./Buttons/DeleteButton";
+=======
+import AddButton from "./Buttons/AddButton";
+import EditButton from "./Buttons/EditButton";
+import DeleteButton from "./Buttons/DeleteButton";
+import "./QuotesList.css";
+import "../../src/index.css";
+
+>>>>>>> 9bd5b8a95921bfe893996c747491e2c825f42c89
 
 const QuotesList = () => {
   const [phrases, setPhrases] = useState([
@@ -53,9 +62,36 @@ const QuotesList = () => {
 
           <EditButton onClick={() => handleEdit(phrase.id)} />
           <DeleteButton onClick={() => handleDelete(phrase.id)} />
+    <>
+      <section>
+        <div className="container-list">
+          <div className="title-header">
+            <div className="container-title-list">
+
+              {/* TÍTULO GENERAL (NO SE REPITE) */}
+              <h2>Frases guardadas</h2>
+              <h4>Una colección de pensamientos que quieres tener cerca</h4>
+            </div>
+            <div className="container-btn-add"> <AddButton /></div>
+          </div>
+
+          {/* LISTA DE FRASES */}
+          {phrases.map((phrase) => (
+            <div className="container-phrase-save" key={phrase.id}>
+              <p className="phrase-save">
+                “{phrase.text}” — {phrase.author}
+              </p>
+              <div className="container-button">
+                <EditButton />
+                <DeleteButton />
+              </div>
+
+            </div>
+
+          ))}
         </div>
-      ))}
-    </section>
+      </section >
+    </>
   );
 };
 
