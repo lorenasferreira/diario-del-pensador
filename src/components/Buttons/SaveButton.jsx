@@ -1,12 +1,13 @@
 import "./SaveButton.css";
 
-const SaveButton = () => {
- //Aquí irá el código de ruta guardar la frase nueva
+const SaveButton = ({onSave}) => {
+    
     return (
         <>
-            <button className="btn-save">Guardar frase</button>
+            <button className="btn-save" onClick={onSave}>Guardar frase </button>
         </>
-    )
-}
+    );
+};
 
 export default SaveButton;
+
