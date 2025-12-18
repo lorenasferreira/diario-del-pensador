@@ -4,6 +4,8 @@ import EditButton from "./Buttons/EditButton";
 import DeleteButton from "./Buttons/DeleteButton";
 import "./QuotesList.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const QuotesList = () => {
   const [phrases, setPhrases] = useState([
