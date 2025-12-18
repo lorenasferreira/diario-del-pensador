@@ -5,6 +5,7 @@
     cursor: pointer;
     padding: 25px;
     transition: background-color 0.3s ease;
+     background-color: #faf7f2;
 }
 
 .btn-delete:hover{
