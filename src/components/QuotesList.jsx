@@ -1,4 +1,10 @@
 import { useState } from "react";
+import AddButton from "./Buttons/AddButton";
+import EditButton from "./Buttons/EditButton";
+import DeleteButton from "./Buttons/DeleteButton";
+import "./QuotesList.css";
+import "../../src/index.css";
+
 
 const QuotesList = () => {
   const [phrases, setPhrases] = useState([
@@ -30,25 +36,36 @@ const QuotesList = () => {
   ]);
 
   return (
-    <section>
-      {/* TÍTULO GENERAL (NO SE REPITE) */}
-      <h2>Frases guardadas</h2>
-      <h4>Una colección de pensamientos que quieres tener cerca</h4>
+    <>
+      <section>
+        <div className="container-list">
+          <div className="title-header">
+            <div className="container-title-list">
 
-      <button>Más</button>
+              {/* TÍTULO GENERAL (NO SE REPITE) */}
+              <h2>Frases guardadas</h2>
+              <h4>Una colección de pensamientos que quieres tener cerca</h4>
+            </div>
+            <div className="container-btn-add"> <AddButton /></div>
+          </div>
 
-      {/* LISTA DE FRASES */}
-      {phrases.map((phrase) => (
-        <div key={phrase.id}>
-          <p>
-            “{phrase.text}” — {phrase.author}
-          </p>
+          {/* LISTA DE FRASES */}
+          {phrases.map((phrase) => (
+            <div className="container-phrase-save" key={phrase.id}>
+              <p className="phrase-save">
+                “{phrase.text}” — {phrase.author}
+              </p>
+              <div className="container-button">
+                <EditButton />
+                <DeleteButton />
+              </div>
 
-          <button>Editar</button>
-          <button>Eliminar</button>
+            </div>
+
+          ))}
         </div>
-      ))}
-    </section>
+      </section >
+    </>
   );
 };
 
