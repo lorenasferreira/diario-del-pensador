@@ -73,8 +73,4 @@ useState: Para el manejo del array de frases y el estado de edición.
 useEffect: Para sincronizar los cambios con el almacenamiento local.
 Props: Para la comunicación eficiente entre componentes atómicos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
