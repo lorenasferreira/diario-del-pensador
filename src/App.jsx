@@ -14,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<QuotesList />} />
             <Route path="/new" element={<NewQuote />} />
+            <Route path="/edit/:id" element={<NewQuote />} />
           </Routes>
         </main>
 
