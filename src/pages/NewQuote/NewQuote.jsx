@@ -1,8 +1,8 @@
-import "./NewQuote.css";
-import InitButton from "../components/Buttons/BtnInit/InitButton";
-import SaveButton from "../components/Buttons/BtnSave/SaveButton";
+import "../NewQuote/NewQuote.css";
+import InitButton from "../../components/Buttons/BtnInit/InitButton";
+import SaveButton from "../../components/Buttons/BtnSave/SaveButton";
 import { useActionState, useEffect, useState } from "react";
-import QuotesList from "../components/ListPhrases/QuotesList";
+import QuotesList from "../../components/ListPhrases/QuotesList";
 import { Link } from "react-router-dom";
 
 const NewQuote = ({ initialData, onSubmit, isEditing }) => {
@@ -97,7 +97,6 @@ const NewQuote = ({ initialData, onSubmit, isEditing }) => {
               <InitButton />
             </Link>
           </div>
-<<<<<<< HEAD:src/pages/NewQuote.jsx
         </div>
 
         <div className="container-phrase">
@@ -142,44 +141,6 @@ const NewQuote = ({ initialData, onSubmit, isEditing }) => {
         <SaveButton />
       </form>
     </section>
-=======
-          <div className="container-phrase">
-            <label htmlFor="">Frase</label>
-            <textarea
-              name="text"
-              id=""
-              placeholder="Escribe aquí tu frase..."
-              onChange={NewPhrase}
-              value={form.text}
-            ></textarea>
-            {started.text && errors.text && <p className="error-msg">{errors.text}</p>}
-          </div>
-          <div>
-            <label htmlFor="">Autor / Autora</label>
-            <input
-              type="text"
-              name="author"
-              onChange={NewPhrase}
-              value={form.author}
-            />
-            {started.author && errors.author && <p className="error-msg">{errors.author}</p>}
-          </div>
-          <div>
-            <label htmlFor="">Etiqueta(Opcional)</label>
-            <input
-              type="text"
-              name="etiq"
-              onChange={NewPhrase}
-              value={form.etiq || ""}
-            />
-            {started.etiq && errors.etiq && <p className="error-msg">{errors.etiq}</p>}
-          </div>
-          <SaveButton />
-        </form>
-        
-      </section>
-    </>
->>>>>>> dev:src/pages/NewQuote/NewQuote.jsx
   );
 };
 
