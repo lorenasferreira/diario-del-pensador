@@ -20,6 +20,18 @@ function App() {
       author: "Nelson Mandela",
       etiq: "",
     },
+    {
+      id: 3,
+      text: "Un día sin reír es un día perdido",
+      author: "Charles Chaplin",
+    },
+    {
+      id: 4,
+      text: "Sé el cambio que quieres ver en el mundo",
+      author: "Mahatma Gandhi",
+    },
+    
+
   ]);
 
   return (
