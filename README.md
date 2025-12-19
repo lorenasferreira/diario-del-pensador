@@ -63,9 +63,13 @@ npm run dev
 
 👥 Equipo
 Sukaina - ScrumMaster
+
 María José - Product Owner
+
 Lorena - Desarrolladora
+
 Geraldine - Desarrolladora
+
 
 📝 Notas del Code Review
 Durante el desarrollo se priorizó el uso de:
