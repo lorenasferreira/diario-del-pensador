@@ -1,76 +1,172 @@
-# Empowering Phrases App 💡
+# Diario del Pensador
 
-📝 Descripción
-Empowering Phrases es una aplicación web interactiva diseñada para gestionar frases motivadoras. Permite a los usuarios realizar un ciclo completo de CRUD (Crear, Leer, Actualizar y Borrar) sobre frases y sus respectivos autores. El proyecto aplica la metodología de Atomic Design para crear una interfaz modular, escalable y totalmente adaptable a dispositivos móviles.
+## Descripción General
 
-🚀 Demo y Maquetas
-Diagrama de flujo: https://miro.com/app/board/uXjVGcJuHvI=/
+**Diario del Pensador** es una aplicación web desarrollada con React que permite a los usuarios gestionar una colección personal de frases reflexivas y motivadoras. La aplicación implementa un flujo completo de operaciones CRUD (Crear, Leer, Actualizar y Eliminar), siguiendo una arquitectura modular basada en **Atomic Design**, con foco en escalabilidad, mantenibilidad y una experiencia de usuario clara e intuitiva.
 
-Diseño en Figma: https://www.figma.com/design/2fAClDYGHQfpY8SPI3AQxl/Diario-del-Pensador?node-id=25-3&t=0l5hN7LBQHUEB8vN-1
+El proyecto aplica buenas prácticas de desarrollo frontend moderno, incluyendo separación de responsabilidades, reutilización de componentes, control de estado eficiente y navegación mediante rutas dinámicas.
 
-Tablero de Trello: https://trello.com/invite/b/69394aa289a842c61ad5a400/ATTI1724416b78c9306397ed5308aa4d77d1E09FF91C/empowering-phrases-app
+---
 
+## Capturas de Pantalla
 
-🛠️ Tecnologías y Herramientas
-Core: React.js (Componentes funcionales y Hooks).
-Estilos: CSS3 / [Sass o Framework utilizado].
-Arquitectura: Metodología Atomic Design.
-Control de Versiones: Git & GitHub.
-Entorno de Desarrollo: Visual Studio Code.
+> Las siguientes imágenes muestran las principales vistas de la aplicación.
 
-🧩 Arquitectura: Atomic Design
-Para este proyecto hemos dividido la interfaz en:
-Átomos: Botones de acción, inputs de texto, títulos.
-Moléculas: Grupos de input con etiquetas, tarjetas de autor.
-Organismos: Formulario de registro de frases, listado dinámico de tarjetas.
-Templates: Estructura de layout (Header, Main, Footer).
-Pages: Vista principal Home con lógica de estado.
+### Vista Principal – Listado de Frases
 
-📋 Planificación y Sprints
-El proyecto se dividió en 2 Sprints:
-Sprint 1: Maquetación, definición de componentes atómicos y lógica básica de visualización.
-Sprint 2: Implementación del CRUD completo, persistencia en localStorage y optimización responsive.
+![Vista principal de Diario del Pensador](src/assets/screenshots/home.png)
 
-Userflow
-El usuario entra y ve la lista de frases existentes.
-El usuario completa el formulario (Frase + Autor).
-Al hacer clic en "Guardar", la frase aparece en la lista.
-El usuario puede editar una frase existente o eliminarla.
+### Vista de Creación de Nueva Frase
 
-⚙️ Requisitos Funcionales
-Listar todas las frases con su autor.
-Crear nuevas frases (con validación de autor anónimo).
-Editar contenido y autor de frases existentes.
-Eliminar frases de la lista.
+![Vista de creación de frase](src/assets/screenshots/new-phrase.png)
 
-💻 Instalación
-Si quieres ejecutar este proyecto localmente:
-1.Clona el repositorio:
-bash
+---
+
+## Recursos de Diseño y Planificación
+
+* **Diagrama de flujo / User Flow (Miro)**
+  [https://miro.com/app/board/uXjVGcJuHvI=/](https://miro.com/app/board/uXjVGcJuHvI=/)
+
+* **Diseño de Interfaz (Figma)**
+  [https://www.figma.com/design/2fAClDYGHQfpY8SPI3AQxl/Diario-del-Pensador](https://www.figma.com/design/2fAClDYGHQfpY8SPI3AQxl/Diario-del-Pensador)
+
+## Stack Tecnológico
+
+### Frontend
+
+* **React.js**
+
+  * Componentes funcionales
+  * Hooks (`useState`, `useEffect`)
+* **React Router DOM**
+
+  * Navegación entre vistas
+  * Rutas dinámicas
+* **JavaScript (ES6+)**
+
+### Estilos
+
+* **CSS3**
+* Enfoque de estilos orientado a componentes
+* Diseño responsive (mobile-first)
+
+### Arquitectura y Patrones
+
+* **Atomic Design**
+* Arquitectura basada en componentes
+* Lifting State Up
+* Controlled Components
+
+### Herramientas de Desarrollo
+
+* **Vite**
+* **Visual Studio Code**
+* **Git & GitHub**
+* **npm**
+
+---
+
+## Arquitectura de la Aplicación (Atomic Design)
+
+La interfaz se estructura siguiendo la metodología **Atomic Design**:
+
+### Átomos
+
+* Botones de acción (Add, Edit, Delete, Save, Init)
+* Inputs de texto
+* Labels
+* Tipografía base
+
+### Moléculas
+
+* Campos de formulario (input + label + validación)
+* Tarjetas de frases
+* Bloques de acciones
+
+### Organismos
+
+* Formulario de creación y edición de frases
+* Listado dinámico de frases
+
+### Templates
+
+* Layout general de la aplicación:
+
+  * Header
+  * Main Content
+  * Footer
+
+### Pages
+
+* Home (Listado de frases)
+* Create New Phrase
+* Edit Phrase
+
+---
+
+## Flujo de Usuario
+
+1. El usuario accede a la aplicación y visualiza la lista de frases guardadas.
+2. Puede añadir una nueva frase completando el formulario (frase y autor).
+3. Al guardar, la frase se añade automáticamente al listado principal.
+4. El usuario puede:
+
+   * Editar una frase existente.
+   * Eliminar una frase.
+5. Tras crear o editar una frase, la aplicación redirige al listado principal con feedback visual.
+
+---
+
+## Requisitos Funcionales
+
+* Listar todas las frases con su autor correspondiente.
+* Crear nuevas frases con validación de campos.
+* Editar frases existentes.
+* Eliminar frases.
+* Navegación fluida entre vistas mediante React Router.
+* Interfaz responsive y accesible.
+
+---
+
+## Instalación y Ejecución en Local
+
+Para ejecutar el proyecto en tu entorno local:
+
+```bash
+# Clonar el repositorio
 git clone https://github.com/lorenasferreira/diario-del-pensador.git
 
-2.Entra en la carpeta:
-bash
-cd empowering-phrases
+# Acceder a la carpeta del proyecto
+cd diario-del-pensador
 
-3.Instala las dependencias:
-bash
+# Instalar dependencias
 npm install
 
-4.Lanza la aplicación:
-bash
+# Ejecutar la aplicación
 npm run dev
+```
 
-👥 Equipo
-Sukaina - ScrumMaster
-María José - Product Owner
-Lorena - Desarrolladora
-Geraldine - Desarrolladora
+La aplicación se abrirá por defecto en:
+`http://localhost:5173`
 
-📝 Notas del Code Review
-Durante el desarrollo se priorizó el uso de:
-useState: Para el manejo del array de frases y el estado de edición.
-useEffect: Para sincronizar los cambios con el almacenamiento local.
-Props: Para la comunicación eficiente entre componentes atómicos.
+---
 
+## Notas de Code Review
 
+Durante el desarrollo se priorizó:
+
+* Uso de `useState` para la gestión del estado de las frases.
+* Uso de `useEffect` para efectos secundarios y sincronización.
+* Comunicación clara entre componentes mediante props.
+* Separación entre lógica de negocio y presentación.
+* Estructura escalable orientada a crecimiento futuro del proyecto.
+
+---
+
+## Mejoras Futuras
+
+* Persistencia de datos mediante backend o base de datos.
+* Autenticación de usuarios.
+* Sistema avanzado de etiquetas.
+* Búsqueda y filtrado de frases.
+* Tests unitarios y de integración.
