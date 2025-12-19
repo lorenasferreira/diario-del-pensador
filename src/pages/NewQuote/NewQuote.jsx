@@ -105,7 +105,7 @@ const NewQuote = () => {
             />
             {started.etiq && errors.etiq && <p className="error-msg">{errors.etiq}</p>}
           </div>
-          <SaveButton onSave={SavePhrase} />
+          <SaveButton />
         </form>
         
       </section>
