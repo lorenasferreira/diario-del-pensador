@@ -62,6 +62,7 @@ bash
 npm run dev
 
 👥 Equipo
+
 Sukaina - ScrumMaster
 
 María José - Product Owner
