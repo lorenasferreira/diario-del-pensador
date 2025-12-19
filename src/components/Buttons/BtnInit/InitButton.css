@@ -1,0 +1,16 @@
+.btn-init {
+    border: none;
+    background-color: #FAF7F2;
+    border-radius: 50%;
+    fill:#7A5C4D;
+    cursor: pointer;
+    padding: 15px;
+    aspect-ratio: 1/1;
+    transition: background-color 0.3s;
+}
+
+.btn-init:hover{
+    background-color: #7A5C4D; 
+    transition: background-color 0.3s;
+    fill:#FAF7F2;
+}
