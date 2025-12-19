@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import QuotesList from "./components/QuotesList";
-import NewQuote from "./pages/NewQuote/NewQuote";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import QuotesList from "./components/ListPhrases/QuotesList";
+import NewQuote from "./pages/NewQuote";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<QuotesList />} />
             <Route path="/new" element={<NewQuote />} />
+            <Route path="/edit/:id" element={<NewQuote />} />
           </Routes>
         </main>
 

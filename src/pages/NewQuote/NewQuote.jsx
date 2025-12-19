@@ -1,8 +1,9 @@
 import "./NewQuote.css";
-import InitButton from "../../components/Buttons/InitButton";
-import SaveButton from "../../components/Buttons/SaveButton";
+import InitButton from "../components/Buttons/BtnInit/InitButton";
+import SaveButton from "../components/Buttons/BtnSave/SaveButton";
 import { useActionState, useEffect, useState } from "react";
-import QuotesList from "../../components/QuotesList";
+import QuotesList from "../components/ListPhrases/QuotesList";
+import { Link } from "react-router-dom";
 
 const NewQuote = () => {
   const [form, setForm] = useState({ text: "", author: "", etiq:"" });
@@ -59,7 +60,7 @@ const NewQuote = () => {
   return (
     <>
       <section className="container-form">
-        <form className="form-new" onSubmit={SavePhrase} >
+        <form className="form-new" action="">
           <div className="container-title">
             <div>
               <h2>Añadir frase nueva</h2>
@@ -68,7 +69,9 @@ const NewQuote = () => {
               </p>
             </div>
             <div className="container-btn-init">
+              <Link to="/">
               <InitButton />
+              </Link>
             </div>
           </div>
           <div className="container-phrase">
