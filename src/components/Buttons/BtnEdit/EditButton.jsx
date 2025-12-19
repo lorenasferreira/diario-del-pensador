@@ -1,6 +1,6 @@
 import "./EditButton.css";
 
-const EditButton = ({ onClick }) => {
+const EditButton = ({ onClick }) => { 
   return (
     <button className="btn-edit" onClick={onClick}>
       <svg
