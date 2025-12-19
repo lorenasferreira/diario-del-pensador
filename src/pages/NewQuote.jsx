@@ -1,8 +1,8 @@
-import "./NewQuote.css";
-import InitButton from "../components/Buttons/BtnInit/InitButton";
-import SaveButton from "../components/Buttons/BtnSave/SaveButton";
+import "./pages/NewQuote.css";
+import InitButton from "components/Buttons/InitButton";
+import SaveButton from "components/Buttons/SaveButton";
 import { useActionState, useEffect, useState } from "react";
-import QuotesList from "../components/ListPhrases/QuotesList";
+import QuotesList from "components/QuotesList";
 import { Link } from "react-router-dom";
 
 const NewQuote = () => {
