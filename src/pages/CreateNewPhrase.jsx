@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import NewQuote from "./NewQuote";
+import NewQuote from "./NewQuote/NewQuote";
 
 const CreateNewPhrase = ({ phrases, setPhrases }) => {
   const { id } = useParams();
@@ -16,8 +16,12 @@ const CreateNewPhrase = ({ phrases, setPhrases }) => {
         p.id === Number(id) ? { ...p, ...data } : p
       );
       setPhrases(updatedPhrases);
+
+      alert("¡Frase editada con éxito!");
     } else {
       setPhrases([...phrases, { id: Date.now(), ...data }]);
+
+      alert("¡Frase añadida a la lista!");
     }
 
     navigate("/");
